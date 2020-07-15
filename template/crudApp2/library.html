@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+{% load static %}
+{% load cust_filter %}
+
+<html>
+<head>
+    <title>Books App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/demo.css' %}">
+</head>
+<body style="background-color:#4DB6AC;">
+<nav class="navbar navbar-light" style="background-color:#000080;">
+    <p class="navbar-brand" style="color:white;width:400px">Library App</p>
+    <p class = 'navbar-link btn-lg' style="color:white;">Hello {{name|title}}!!!</p>
+</nav>
+
+<nav class="navbar navbar-light" style="background-color:#000080;">
+    <a class="navbar-link btn-lg" href="{% url 'index' %}" style="background-color:#C0C0C0;color:#000000;">DataFlair</a>
+    <a href="{% url 'admin:index' %}" class = 'navbar-link btn-lg' style="background-color:#C0C0C0;color:#000000;">Admin</a>
+    <a href="{% url 'upload-book' %}" class="navbar-link btn-lg" style="background-color:#C0C0C0;color:#000000;">Upload Books</a>
+    <a href="logout/" class = 'navbar-link btn-lg' style="background-color:#C0C0C0;color:#000000;">Logout</a>
+</nav>
+<br>
+
+{% block content %}
+<div class="card-columns">
+    {% for book in shelf %}
+    <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ book.picture.url }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ book.name|title }}</h5>
+    <p class="card-text">{{ book.describe|sentence }}</p>
+   <div class="card-footer bg-transparent border-dark">
+   <p class="card-title">{{book.author}}</p>
+   <center>
+       <a href="updates/{{book.id}}" class="btn btn-warning" >edit</a>
+       <a href="deletes/{{book.id}}" class="btn btn-danger" >delete</a>
+    </center>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>

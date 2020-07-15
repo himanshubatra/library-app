@@ -1,0 +1,25 @@
+<form method="post">
+  {% csrf_token %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <div class="jumbotron " style="background-image: url(https://images.pexels.com/photos/4074444/pexels-photo-4074444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);background-repeat: repeat;background-position: center;">
+    <h2><b>Sign Up </b></h2><br>
+    {% for field in form %}
+    <p>
+      <b>{{ field.label_tag }}</b><br>
+        {{ field }}<br>
+       {% for error in field.errors %}
+<!--      <input type="text" placeholder="{{ error }}"><br>-->
+      {% if field.help_text %}
+        <small style="color: black">{{ field.help_text }}</small>
+        {% endif %}
+      {% endfor %}
+    </p>
+  {% endfor %}
+  <button type="submit" >Sign up</button><br>
+    <p><br>
+      Already a user ?
+  <a href="{% url 'login' %}">Login</a>
+    </p>
+    </div>
+</form>
+

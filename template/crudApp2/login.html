@@ -1,0 +1,19 @@
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/demo.css' %}">
+<body style="background-color:#4DB6AC; background-image: url('https://images.pexels.com/photos/372748/pexels-photo-372748.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');">
+  <form method="post">
+    {% csrf_token %}
+    <div class="jumbotron" align="center" style="color:white">
+         <h1>LOGIN</h1>
+    <h1 color="#000080">{{ form.as_p }}</h1>
+      <button type="submit" style="width:100px;height:25px">Login</button>
+      <h1>
+       <p><br>
+      Don't have an account?
+         <b><a href="{% url 'signup' %}">SignUp</a></b>
+    </p>
+        </h1>
+    </div>
+  </form>
+{% endblock %}

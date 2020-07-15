@@ -1,0 +1,9 @@
+.jumbotron{margin-top:200px ;
+}
+body {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSP8_DfFgOzN06EwsaEIMqdeOqhYxS8XWM6O-X9ClWiFQRZlbJo&usqp=C"); /* The image used */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
