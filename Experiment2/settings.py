@@ -84,27 +84,19 @@ WSGI_APPLICATION = 'Experiment2.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-
-    # 'default': {
-    #     'ENGINE': 'djongo',
-    #     'NAME': 'student',
-    #     'HOST': 'mongodb+srv://test:test@cluster0-05onb.mongodb.net/student?retryWrites=true&w=majority',
-    #     'USER': 'test',
-    #     'PASSWORD': 'test',
-    # }
-
-'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'student',
-        'CLIENT': {
-            'host':'mongodb+srv://test:ToeilFeKbxwmHa4E@cluster0-05onb.mongodb.net/student?retryWrites=true&w=majority'
-        },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+
+# 'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'student',
+#         'CLIENT': {
+#             'host':'mongodb+srv://test:ToeilFeKbxwmHa4E@cluster0-05onb.mongodb.net/student?retryWrites=true&w=majority'
+#         },
+#     }
+ }
 
 
 # Password validation
